@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<h1>マイクラにコマンドを投げる！</h1>
+
+<div>
+    <label>コマンド</label>
+    <div class="m-1">
+        <input class="form-control" @bind="command" />
+    </div>
+    <div class="mt-3">
+        <button type="button" class="btn btn-outline-primary" @onclick="Send">Send</button>
+    </div>
+</div>
+
+@code{
+    static IPAddress ipaddress = IPAddress.Parse("127.0.0.1");
+    static ushort port = 25575;
+    static string password = "minecraft";
+    static RCON rcon = new RCON(ipaddress, port, password);
+
+    private string command; //Web UI
+
+    private async Task Send()
+    {
+        await rcon.ConnectAsync();
+
+        var weather_result = await rcon.SendCommandAsync(command);
+    }
+}
