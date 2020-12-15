@@ -95,13 +95,6 @@ using CoreRCON;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "F:\GitHub\Blazor_Minecraft\BlazorApp1\Pages\FetchData.razor"
-using BlazorApp1.Data;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
     public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -110,20 +103,6 @@ using BlazorApp1.Data;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 39 "F:\GitHub\Blazor_Minecraft\BlazorApp1\Pages\FetchData.razor"
-       
-    private WeatherForecast[] forecasts;
-
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
     }
 }
 #pragma warning restore 1591

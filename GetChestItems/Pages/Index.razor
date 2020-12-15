@@ -1,0 +1,79 @@
+﻿@page "/"
+@using GetChestItems.Data
+@inject ChestItemService ItemService
+
+<h1>チェストアイテムの取得</h1>
+
+<div>
+    <label>チェストの座標</label>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">x</span>
+        </div>
+        <input @bind="x" type="text" class="form-control" placeholder="x座標" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">y</span>
+        </div>
+        <input @bind="y" type="text" class="form-control" placeholder="y座標" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">z</span>
+        </div>
+        <input @bind="z" type="text" class="form-control" placeholder="z座標" aria-describedby="basic-addon1">
+    </div>
+    <div class="mt-3">
+        <button type="button" class="btn btn-outline-primary" @onclick="GetChestItems">アイテムの取得</button>
+    </div>
+</div>
+
+<p>取得アイテム一覧が表示されます</p>
+
+@if (Items == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>アイテム名</th>
+                <th>アイテムの数</th>
+                <th>アイテムスロット</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Items)
+            {
+                <tr>
+                    <td>@item.ItemName</td>
+                    <td>@item.ItemCount</td>
+                    <td>@item.ItemSlot</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+@code{
+    private int x;
+    private int y;
+    private int z;
+
+    private ChestItems[] Items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Items = await ItemService.GetItems(x, y, z);
+    }
+
+    private async Task GetChestItems()
+    {
+        //await ItemService.GetItems(x, y, z);
+    }
+}
+

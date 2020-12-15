@@ -104,3 +104,6 @@ F:\GitHub\Blazor_Minecraft\BlazorApp1\obj\Debug\netcoreapp3.1\BlazorApp1.csproj.
 F:\GitHub\Blazor_Minecraft\BlazorApp1\obj\Debug\netcoreapp3.1\BlazorApp1.dll
 F:\GitHub\Blazor_Minecraft\BlazorApp1\obj\Debug\netcoreapp3.1\BlazorApp1.pdb
 F:\GitHub\Blazor_Minecraft\BlazorApp1\obj\Debug\netcoreapp3.1\BlazorApp1.genruntimeconfig.cache
+F:\GitHub\Blazor_Minecraft\BlazorApp1\bin\Debug\netcoreapp3.1\libman.json
+F:\GitHub\Blazor_Minecraft\BlazorApp1\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\Chart.razor.g.cs
+F:\GitHub\Blazor_Minecraft\BlazorApp1\obj\Debug\netcoreapp3.1\Razor\Shared\Chart.razor.g.cs
